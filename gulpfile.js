@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var concat = require('gulp-concat');
 
 var config = {
   source: './src/',
@@ -17,6 +18,7 @@ var sources = {
   assets: config.source + paths.assets,
   html: config.source + paths.html,
   sass: config.source + paths.sass,
+  js: config.source + paths.js,
 };
 
 gulp.task('html', ()=> {
@@ -30,4 +32,10 @@ gulp.task("sass", function() {
       outputStyle: "compressed"
     }).on("error", sass.logError))
     .pipe(gulp.dest(config.dist + "css"));
+});
+
+gulp.task("js", function() {
+  gulp.src(sources.js)
+    .pipe(concat('bundle.js'))
+    .pipe(gulp.dest(config.dist + "js"));
 });

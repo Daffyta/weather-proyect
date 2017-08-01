@@ -5,9 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Weather</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
-  <h1>Felicidades, levantaste tu servidor xDDD</h1>
+  <header id="weather">
+    <div class="container">
+      <div class="col s12 weather-indicator">
+        <img src="assets/img/iconos/sun.png" alt="Sun">
+        <div><h2>15°</h2></div>
+      </div>
+    </div>
+  </header>
+  <section id="data">
+    <div class="container">
+      <div class="row">
+          <ul class="col s6">
+            <li>Wind</li>
+            <li>Humidity</li>
+            <li>UV Index</li>
+            <li>Pressure</li>
+          </ul>
+          <ul class="col s6 right-align">
+            <li>3 m/s</li>
+            <li>82%</li>
+            <li>1</li>
+            <li>1017 hPa</li>
+          </ul>
+      </div>
+    </div>
+  </section>
+  <footer id="prediction">
+    <div class="container">
+      <div class="col s12 center-align">
+        <h5>PREDICCION DE LA SEMANA</h5>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
