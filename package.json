@@ -1,0 +1,34 @@
+{
+  "name": "weather-proyect",
+  "version": "0.1.0",
+  "description": "App que consume dos apis y que nos dice el clima y nos da una imagen de fondo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daffyta/weather-proyect.git"
+  },
+  "keywords": [
+    "API",
+    "Flickr",
+    "Weather",
+    "Gulp",
+    "Sass"
+  ],
+  "author": "Dafne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daffyta/weather-proyect/issues"
+  },
+  "homepage": "https://github.com/Daffyta/weather-proyect#readme",
+  "devDependencies": {
+    "express": "^4.15.3",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {
+    "path": "^0.12.7"
+  }
+}
