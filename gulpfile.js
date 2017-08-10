@@ -12,6 +12,7 @@ var paths = {
   html: "**/*.html",
   sass: 'scss/*.scss',
   mainSass: 'scss/main.scss',
+  js: 'js/index.js'
 };
 
 var sources = {
@@ -34,7 +35,7 @@ gulp.task("sass", function() {
     .pipe(gulp.dest(config.dist + "css"));
 });
 
-gulp.task("js", function() {
+gulp.task('js', function() {
   gulp.src(sources.js)
     .pipe(concat('bundle.js'))
     .pipe(gulp.dest(config.dist + "js"));
