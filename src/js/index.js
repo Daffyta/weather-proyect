@@ -23,7 +23,7 @@ function dynamicPhoto(photos) {
 
     $("#bg-flickr").css('background-image', backgroundUrl);
 
-  }, 3000);
+  }, 5000);
 };
 
 $(document).ready(loadPage);
