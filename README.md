@@ -19,4 +19,4 @@ NOTAS.
 * Cambié los iconos por que los que tiene la aplicación original no contaba con todos.
 * El api de Flickr tiene una peculiaridad que solo me deja usar el url un día y al día siguiente tengo que renovarla para que pueda trabajar otra vez con las imágenes de fondo.
 * Me falta hacer el arreglo para que me arroje los días de la semana pero me carga el día.
-
+** Es móvil me falta modificar la vista para desktop.
