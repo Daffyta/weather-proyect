@@ -62,8 +62,8 @@ function container(response){
 var template =
  '<div class="container">'
 	 +'<div class="weather-indicator-weekly row">'
-		 +'<img src="assets/img/iconos/clear-day.png" alt="iconWeather" class="col s1" width="100px">'
-		 +'<span class="day col s5 format">_day_</span>'
+		 +'<img src="assets/img/iconos/clear-day.png" alt="iconWeather" class="col s2">'
+		 +'<span class="day col s4 format">_day_</span>'
 		 +'<span class="temperatureMin col s3 format">_temperatureMin_ °</span>'
 		 +'<span class="temperatureMax col s3 format">_temperatureMax_ °</span>'
 	 +'</div>'

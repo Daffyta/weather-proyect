@@ -13,7 +13,13 @@ body {
 .transparency{
   background-color: rgba(0, 0, 0, 0.5);
   margin-top: 10%;
-  padding: 7%;
+  padding: 5%;
+  text-align: center;
+
+    img{
+      width: 47%;
+      padding: 4%;
+    }
 }
 
 .weather-indicator {
@@ -30,4 +36,5 @@ body {
 
 .format {
   font-size: 1rem;
+  margin-top: 3%;
 }
