@@ -13,33 +13,19 @@ var weatherIndicator = function() {
     $.getJSON(url + apiKey + "/" + lati + "," + longi + "?callback=?",
       function (response) {
         console.log(response);
-        var weather = response.currently;
-				var weatherWeekly = response.daily.data;
-				console.log(weatherWeekly);
-        forecast(weather);
+
+				var weather = response.currently;
         container(response);
+
+
+				var weatherWeekly = response.daily.data;
+					weatherWeekly.forEach(function(response){
+						containerWeekly(response);
+					});
     });
 };
 
-function forecast(weather) {
-  var $seccion = $("#weather-forecast");
-  var $icon = $("<img/>",{"src":"assets/img/iconos/clear-day.png", "alt":"iconWeather"});
-  var $temperature = $("<p/>", {"class":"temperature"});
-  var $wind = $("<p/>", {"class":"wind"});
-  var $humidity = $("<p/>", {"class":"humidity"});
-  var $uvIndex = $("<p/>", {"class":"uvIndex"});
-  var $pressure = $("<p/>", {"class":"pressure"});
-
-  $seccion.append($icon);
-  $seccion.append($temperature);
-  $seccion.append($wind);
-  $seccion.append($humidity);
-  $seccion.append($uvIndex);
-  $seccion.append($pressure);
-};
-
-
-function container(response) {
+function container(response){
   var template =
     '<div class="container">'
 			+'<div class="weather-indicator ">'
@@ -64,7 +50,8 @@ function container(response) {
   var $fullContainer = $("#weather-forecast");
 
   $fullContainer.html(
-    template.replace("_temperature_",response.currently.apparentTemperature)
+    template.replace("_icon_",response.currently.icon)
+		.replace("_temperature_",response.currently.apparentTemperature)
     .replace("_wind_", response.currently.windSpeed)
     .replace("_humidity_", response.currently.humidity)
     .replace("_uvIndex_", response.currently.uvIndex)
@@ -72,15 +59,24 @@ function container(response) {
   );
 };
 
-function forecastWeekly(weatherWeekly){
-	var $seccionW = $("#weekly");
-	weatherWeekly.forEach(function(daily){
-		var url = daily.data
-	})
-	var $icon = $("<img/>",{"src":"assets/img/iconos/clear-day.png", "alt":"iconWeather"});
-	var $day = $("<p/>", {"class": "day"});
-	var $temperatureMin = $("<p/>", {"class":"temperatureMin"});
-	var $temperatureMax = $("<p/>", {"class":"temperatureMax"});
-}
+var template =
+ '<div class="container">'
+	 +'<div class="weather-indicator-weekly row">'
+		 +'<img src="assets/img/iconos/clear-day.png" alt="iconWeather" class="col s1" width="100px">'
+		 +'<span class="day col s5 format">_day_</span>'
+		 +'<span class="temperatureMin col s3 format">_temperatureMin_ °</span>'
+		 +'<span class="temperatureMax col s3 format">_temperatureMax_ °</span>'
+	 +'</div>'
+ +'</div>';
+
+function containerWeekly(response){
+
+  var $fullContainerW = $("#weekly");
+		$fullContainerW.append(
+		template.replace("_day_",response.time)
+  	.replace("_temperatureMin_",response.temperatureMin)
+		.replace("_temperatureMax_",response.temperatureMax)
+  	);
+};
 
 $(document).ready(loadWeather);

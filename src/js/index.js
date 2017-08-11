@@ -4,7 +4,7 @@ var loadPage = function() {
 };
 
 var api = {
-  url : "https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=f78755583fac5d9ece56b77eb3dd331e&per_page=10&format=json&nojsoncallback=1&api_sig=e417cd5be87e286b65e45a4c516b8190"
+  url : "https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=f94100e7273cf0613b828721c463b610&per_page=10&format=json&nojsoncallback=1&api_sig=398928acc5ae3f4d558d09fa901b8738"
 };
 
 var uploadBg = function() {
