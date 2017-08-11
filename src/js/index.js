@@ -1,14 +1,16 @@
+
 var loadPage = function() {
   uploadBg();
 };
 
 var api = {
-  url : "https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=bce6a5153199d7ab52d017e628b2fea1&per_page=10&format=json&nojsoncallback=1&api_sig=e1e396c61417d182bbf4d2f7691ceb9d"
+  url : "https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=f78755583fac5d9ece56b77eb3dd331e&per_page=10&format=json&nojsoncallback=1&api_sig=e417cd5be87e286b65e45a4c516b8190"
 };
 
 var uploadBg = function() {
   $.getJSON(api.url, function (response) {
     dynamicPhoto(response.photos.photo);
+    console.log(response);
   });
 };
 

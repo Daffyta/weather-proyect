@@ -1,3 +1,7 @@
+body {
+  color: #fff;
+}
+
 #bg-flickr {
   background-position: center;
   background-repeat: no-repeat;
@@ -5,7 +9,20 @@
   height: 670px;
 }
 
+#transparency{
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: 10%;
+  padding: 7%;
+}
 
 .weather-indicator {
   text-align: center;
+}
+
+.prediction {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 3%;
+  a {
+    color: #000;
+  }
 }
