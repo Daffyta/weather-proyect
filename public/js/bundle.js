@@ -14,10 +14,12 @@ var weatherIndicator = function() {
       function (response) {
         console.log(response);
         var weather = response.currently;
-				var weatherWeekly = response.daily.data;
+				var weatherWeekly = response.currently.daily;
 				console.log(weatherWeekly);
         forecast(weather);
         container(response);
+				forecastWeekly(weatherWeekly);
+				containerWeekly(response);
     });
 };
 
@@ -38,8 +40,7 @@ function forecast(weather) {
   $seccion.append($pressure);
 };
 
-
-function container(response) {
+function container(response){
   var template =
     '<div class="container">'
 			+'<div class="weather-indicator ">'
@@ -72,6 +73,43 @@ function container(response) {
   );
 };
 
+function forecastWeekly(weatherWeekly){
+	var $seccionW = $("#weekly");
+	// weatherWeekly.forEach(function(data){
+	// console.log($seccionW);
+		var $iconW = $("<img/>",{"src":"assets/img/iconos/clear-day.png", "alt":"iconWeather"});
+		var $day = $("<p/>", {"class": "day"});
+		var $temperatureMin = $("<p/>", {"class":"temperatureMin"});
+		var $temperatureMax = $("<p/>", {"class":"temperatureMax"});
+
+		$seccionW.append($iconW);
+		$seccionW.append($day);
+		$seccionW.append($temperatureMin);
+		$seccionW.append($temperatureMax);
+	// });
+};
+
+function containerWeekly(response){
+  var template =
+    '<div class="container">'
+			+'<div class="weather-indicator-weekly row">'
+      	+'<img src="assets/img/iconos/clear-day.png" alt="iconWeather" width="25px">'
+				+'<span class="day">_day_</span>'
+				+'<span class="temperatureMin">_temperatureMin_</span>'
+				+'<span class="temperatureMax">_temperatureMax_</span>'
+      +'</div>'
+    +'</div>';
+
+  var $fullContainerW = $("#weekly");
+	// console.log($fullContainerW);
+  $fullContainerW.html(
+    template.replace("_day_",response.daily.data.time)
+  	.replace("_temperatureMin_",response.daily.data.temperatureMin)
+		.replace("_temperatureMax_",response.daily.data.temperatureMax)
+  );
+	// console.log(template);
+};
+
 $(document).ready(loadWeather);
 
 
@@ -80,7 +118,7 @@ var loadPage = function() {
 };
 
 var api = {
-  url : "https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=f78755583fac5d9ece56b77eb3dd331e&per_page=10&format=json&nojsoncallback=1&api_sig=e417cd5be87e286b65e45a4c516b8190"
+  url : "https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=f94100e7273cf0613b828721c463b610&per_page=10&format=json&nojsoncallback=1&api_sig=398928acc5ae3f4d558d09fa901b8738"
 };
 
 var uploadBg = function() {

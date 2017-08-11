@@ -7,9 +7,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 670px;
+  background-attachment: fixed;
 }
 
-#transparency{
+.transparency{
   background-color: rgba(0, 0, 0, 0.5);
   margin-top: 10%;
   padding: 7%;

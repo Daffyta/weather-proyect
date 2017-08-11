@@ -7,22 +7,32 @@
   <title>Weather</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body id="bg-flickr">
-  <section id="transparency">
+  <section id="predictor" class="transparency">
     <section id="weather-forecast"></section>
   </section>
   <section class="center prediction">
     <a href="#weekly-prediction"><h5>PREDICCION DE LA SEMANA</h5></a>
   </section>
   <section id="weekly-prediction">
-    <section id="transparency">
+    <section class="transparency">
       <section id="weekly"></section>
+      <section class="demo">
+        <div class="container">
+    		  <div class="weather-indicator-weekly row">
+          	<img src="assets/img/iconos/clear-day.png" alt="iconWeather" width="25px">
+    				<span class="day">MONDAY</span>
+    				<span class="temperatureMin">14° -</span>
+    				<span class="temperatureMax"> 22°</span>
+          </div>
+        </div>
+      </section>
     </section>
   </section>
   <section class="center prediction">
-    <h5>REGRESAR</h5>
+    <a href="#predictor"><h5>REGRESAR</h5></a>
   </section>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
