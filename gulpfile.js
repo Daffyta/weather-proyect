@@ -12,7 +12,7 @@ var paths = {
   html: "**/*.html",
   sass: 'scss/*.scss',
   mainSass: 'scss/main.scss',
-  js: 'js/index.js'
+  js: 'js/*.js'
 };
 
 var sources = {
