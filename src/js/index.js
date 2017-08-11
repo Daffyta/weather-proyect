@@ -1,5 +1,5 @@
 
-var loadPage = function() {
+var loadPage = function () {
   uploadBg();
 };
 

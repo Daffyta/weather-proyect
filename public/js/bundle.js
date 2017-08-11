@@ -82,7 +82,7 @@ function containerWeekly(response){
 $(document).ready(loadWeather);
 
 
-var loadPage = function() {
+var loadPage = function () {
   uploadBg();
 };
 
